@@ -85,6 +85,14 @@ android {
         versionCode 1
         versionName "1.0"
     }
+     splits {
+        abi {
+            enable true
+            reset()
+            include "armeabi-v7a", "arm64-v8a"
+            universalApk false // <--- Important: disables fat build
+        }
+    }
     signingConfigs {
         debug {
             storeFile file('debug.keystore')
