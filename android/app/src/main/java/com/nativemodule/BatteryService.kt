@@ -42,10 +42,9 @@ class BatteryService : Service() {
                     }
 
                     playSound()
-                    showStickyNotification("Battery Alert", "Battery is at $level% and Bluetooth is turned off")
+                   //showStickyNotification("Battery Alert", "Battery is at $level% and Bluetooth is turned off")
                 } else if (level >= 16 || isCharging) {
                     notified = false
-
                     if (bluetoothAdapter != null && !bluetoothAdapter.isEnabled) {
                         val success = bluetoothAdapter.enable()
                         Log.d("BatteryService", "Bluetooth enabled: $success")
